@@ -26,7 +26,6 @@ public class CalculadoraIdadeController {
 
     @GetMapping("/idade/{data}")
     public ResponseEntity<Integer> calculaIdade(@PathVariable("data") @DateTimeFormat(pattern = "yyyy-MM-dd") Date data) {
-        System.out.println(data);
         int diffBetweenDates = calculadoraIdadeService.calculaData(data);
         return new ResponseEntity<>(diffBetweenDates, HttpStatus.OK);
     }
