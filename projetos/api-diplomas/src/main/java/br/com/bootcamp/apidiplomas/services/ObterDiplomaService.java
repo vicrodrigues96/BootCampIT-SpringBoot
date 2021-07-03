@@ -13,9 +13,9 @@ public class ObterDiplomaService {
         double totalNotas = aluno.getDisciplinas().stream().mapToDouble(Disciplinas::getNota).sum();
         double mediaNotas = totalNotas / aluno.getDisciplinas().size();
 
-        String mensagem = mediaNotas > 9 ? "Parabéns, "+ aluno.getNome() +
-                " você foi aprovado com uma das melhores notas da turma!" : "Diploma de "+
-                aluno.getNome() +".";
+        String mensagem = mediaNotas > 9 ? "Parabéns, " + aluno.getNome() +
+                " você foi aprovado com uma das melhores notas da turma!" : "Diploma de " +
+                aluno.getNome() + ".";
 
         Diploma diplomaGerado = new Diploma(mensagem, mediaNotas, aluno);
         return diplomaGerado.toDto();

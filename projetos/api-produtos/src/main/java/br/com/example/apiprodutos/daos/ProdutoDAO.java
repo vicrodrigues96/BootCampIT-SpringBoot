@@ -28,14 +28,14 @@ public class ProdutoDAO {
         return produto.get();
     }
 
-    public void adicionaProduto(Produto  produto) {
+    public void adicionaProduto(Produto produto) {
         produtos.add(produto);
     }
 
     public Produto updateProduto(Produto produto) {
         int indice = 0;
 
-        for(int i = 0; i < produtos.size(); i++) {
+        for (int i = 0; i < produtos.size(); i++) {
             if (produtos.get(i).getCodigo().equals(produto.getCodigo())) {
                 indice = i;
             }

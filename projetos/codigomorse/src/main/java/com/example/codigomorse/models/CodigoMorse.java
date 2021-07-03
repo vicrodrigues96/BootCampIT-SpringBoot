@@ -5,9 +5,11 @@ public class CodigoMorse {
 
     public CodigoMorse() {
     }
+
     public String getCodigoMorse() {
         return codigoMorse;
     }
+
     public void setCodigoMorse(String codigoMorse) {
         this.codigoMorse = codigoMorse;
     }

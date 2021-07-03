@@ -14,7 +14,7 @@ public class ProdutoService {
     private ProdutoDAO produtoDAO;
 
     public void adicionaProduto(Produto produto) {
-         produtoDAO.adicionaProduto(produto);
+        produtoDAO.adicionaProduto(produto);
     }
 
     public List<Produto> listarProdutos() {
