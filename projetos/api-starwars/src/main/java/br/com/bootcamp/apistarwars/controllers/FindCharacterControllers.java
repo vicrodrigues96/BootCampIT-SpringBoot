@@ -1,10 +1,8 @@
 package br.com.bootcamp.apistarwars.controllers;
 
 import br.com.bootcamp.apistarwars.entities.Character;
-import br.com.bootcamp.apistarwars.repositories.CharacterRepository;
 import br.com.bootcamp.apistarwars.services.FindCharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
