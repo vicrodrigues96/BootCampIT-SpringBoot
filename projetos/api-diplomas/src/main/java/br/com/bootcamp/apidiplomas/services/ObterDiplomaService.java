@@ -5,6 +5,7 @@ import br.com.bootcamp.apidiplomas.dto.DiplomaDTO;
 import br.com.bootcamp.apidiplomas.entities.Aluno;
 import br.com.bootcamp.apidiplomas.entities.Diploma;
 import br.com.bootcamp.apidiplomas.entities.Disciplina;
+import br.com.bootcamp.apidiplomas.exception.SemNotasCadastradasException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,10 @@ public class ObterDiplomaService {
         Aluno aluno = alunoDTO.toEntity();
 
         double mediaNotas = calcularMedia(aluno);
+
+        if (mediaNotas <= 0) {
+            throw new SemNotasCadastradasException("Notas nao cadastradas");
+        }
 
         String mensagem = withHonors(mediaNotas) ? "Parabéns, " + aluno.getNome() +
         " você foi aprovado com uma das melhores notas da turma!" : "Diploma de " +

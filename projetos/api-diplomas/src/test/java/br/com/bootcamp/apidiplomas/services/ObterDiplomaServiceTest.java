@@ -5,6 +5,7 @@ import br.com.bootcamp.apidiplomas.dto.DiplomaDTO;
 import br.com.bootcamp.apidiplomas.dto.DisciplinaDTO;
 import br.com.bootcamp.apidiplomas.entities.Aluno;
 import br.com.bootcamp.apidiplomas.entities.Disciplina;
+import br.com.bootcamp.apidiplomas.exception.SemNotasCadastradasException;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -62,5 +63,14 @@ public class ObterDiplomaServiceTest {
 
         assertTrue(comHonras);
         assertNotEquals(false, comHonras);
+    }
+
+    @Test
+    public void deveRetornarUmaExcecao() {
+        ObterDiplomaService obterDiplomaService = new ObterDiplomaService();
+
+        Aluno aluno = new Aluno("Nome Teste", new ArrayList<>());
+
+        assertThrows(SemNotasCadastradasException.class, () -> obterDiplomaService.obterDiploma(aluno.toDto()));
     }
 }
