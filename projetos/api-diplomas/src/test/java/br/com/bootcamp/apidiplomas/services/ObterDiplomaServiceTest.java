@@ -29,7 +29,6 @@ public class ObterDiplomaServiceTest {
         DiplomaDTO diplomaGerado = obterDiplomaService.obterDiploma(alunoDTO);
 
         //Assert -> Resultado
-
         assertEquals(9.5, diplomaGerado.getMedia());
         assertEquals("Victor", diplomaGerado.getAluno().getNome());
         assertNotEquals(null, diplomaGerado.getAluno());
