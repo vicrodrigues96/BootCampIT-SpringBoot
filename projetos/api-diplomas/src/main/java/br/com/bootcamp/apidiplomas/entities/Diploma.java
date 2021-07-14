@@ -1,7 +1,9 @@
 package br.com.bootcamp.apidiplomas.entities;
 
 import br.com.bootcamp.apidiplomas.dto.DiplomaDTO;
+import lombok.Data;
 
+@Data
 public class Diploma {
 
     private String mensagem;
@@ -13,32 +15,7 @@ public class Diploma {
         this.media = media;
         this.aluno = aluno;
     }
-
-    public String getMensagem() {
-        return mensagem;
-    }
-
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
-    }
-
-    public Double getMedia() {
-        return media;
-    }
-
-    public void setMedia(Double media) {
-        this.media = media;
-    }
-
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
-
     public DiplomaDTO toDto() {
-        return new DiplomaDTO(this.mensagem, this.media, this.aluno);
+        return new DiplomaDTO(this.mensagem, this.media, this.aluno.toDto());
     }
 }
